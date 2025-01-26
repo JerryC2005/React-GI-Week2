@@ -1,4 +1,5 @@
 import { useState } from "react"
+import './movieSearch.css'
 
 function useMovies(){
     const [MoviesList, SetMoviesList] = useState([]);
@@ -82,9 +83,12 @@ export default function MovieSearch() {
 
     return (
         <>
+        <h1>Movie Search</h1>
             <SearchForm onSearch={fetchMovies} />
             {errorMsg && <p style={{ color: "red" }}>{errorMsg}</p>}
+        <section id="#grid-container">
             <ShowMoviesList movies={MoviesList} />
+        </section>
         </>
     )
 }

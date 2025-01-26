@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './Home.css'
 
 export default function Home() {
 const [count, setCount] = useState(0)
@@ -15,9 +16,14 @@ const [count, setCount] = useState(0)
     
     return (
         <>
-        <p>{count}</p>
-        <button onClick={countUp}>+</button>
-        <button onClick={countDown}>-</button>
+        <h1>Counter</h1>
+        <section id="container">
+            <p>{count}</p>
+            <div>
+                <button className="count-btn" onClick={countUp}>+</button>
+                <button className="count-btn" onClick={countDown}>-</button>
+            </div>
+            </section>
         </>
 
     )
