@@ -1,26 +1,29 @@
 import { useState } from 'react'
 import './App.css'
+import Navbar from './component/navbar/Navbar.jsx'
+import Home from './pages/Home.jsx'
+import MovieSearch from './pages/MovieSearch.jsx'
+import NotesApp from './pages/NotesApp.jsx'
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  function countUp() {
-    setCount(count + 1)
-  }
-  console.log(count);
-  console.log(setCount);
-
-  function countDown() {
-    setCount(count - 1)
-  }
+  
 
   return (
+    <>
+
     <div>
-        <p>{count}</p>
-        <button onClick={countUp}>
-        +</button>
-        <button onClick={countDown}>-</button>
+      <Navbar/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>    
+        <Route path='/movie-search' element={<MovieSearch/>}/>
+        <Route path='/notes-app' element={<NotesApp/>}/>
+      </Routes>
     </div>
+    
+      
+    </>
+        
   )
 }
 
